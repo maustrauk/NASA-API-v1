@@ -65,6 +65,7 @@ body {
 
 /* APOD Form */
 .apod-form {
+    margin-top: 1em;
     display: flex;
     justify-content: center;
 }
