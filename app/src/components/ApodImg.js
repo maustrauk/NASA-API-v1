@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react';
 import ReactPlayer from 'react-player';
+import Paper from '@material-ui/core/Paper';
+import {Box} from '@material-ui/core';
 
 const ApodImg = props => {
 
@@ -9,14 +11,16 @@ const ApodImg = props => {
         load(date);
     }, [date]);
 
-    return (<div className="apod-img">
+    return (<Box className="apod-img" >
         <h2>{apod.title}</h2>
         <p>Date: {apod.date}</p>
-        {apod.media_type === "video" ? <ReactPlayer url={apod.url}/> : <img src={apod.url} alt={apod.name} />}
-        <div className="explanation">
+        <Paper elevation={3} className="apod-paper">
+            {apod.media_type === "video" ? <ReactPlayer className="apod-player" url={apod.url}/> : <img src={apod.url} alt={apod.name} />}
+        </Paper>
+        <Paper elevation={3} className="explanation">
             {apod.explanation}
-        </div>
-    </div>)
+        </Paper>
+    </Box>)
 }
 
 export default ApodImg;

@@ -1,5 +1,6 @@
 import React from 'react';
-import moment from 'moment'
+import moment from 'moment';
+import {TextField} from '@material-ui/core';
 
 const ApodForm = props => {
 
@@ -10,14 +11,17 @@ const ApodForm = props => {
     };
 
     return  (<div className="apod-form">
-        <form>
-            <p>Choose your's date</p>
-            <input type="date"
+        <TextField id="date" 
+            label="Choose your's date"
+            type="date"
+            defaultValue={date}
             onChange={onChange}
-            value={date}
-            max={moment().format("YYYY-MM-DD")}
-            min={moment().subtract(5, "year").format('YYYY-MM-DD')}/>
-        </form>
+            InputProps={
+                {inputProps: { 
+                    min: moment().subtract(5, "year").format('YYYY-MM-DD'),
+                    max: moment().format("YYYY-MM-DD")}
+                    }}
+        />
     </div>)
 }
 
