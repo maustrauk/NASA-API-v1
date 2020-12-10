@@ -1,26 +1,27 @@
 import React, {useEffect} from 'react';
 import ReactPlayer from 'react-player';
-import Paper from '@material-ui/core/Paper';
-import {Box} from '@material-ui/core';
 
 const ApodImg = props => {
 
-    const {load, apod, date} = props;
+    const {load, apod, date, styles} = props;
 
     useEffect(() => {
         load(date);
     }, [date]);
 
-    return (<Box className="apod-img" >
-        <h2>{apod.title}</h2>
-        <p>Date: {apod.date}</p>
-        <Paper elevation={3} className="apod-paper">
+
+
+    return (<div className="apod-img" >
+        <h2 className="apod-title" style={styles.title}>{apod.title}</h2>
+        <p className="apod-date" style={styles.date}>Date: {apod.date}</p>
+        <div className="apod-paper" style={styles.paper}>
             {apod.media_type === "video" ? <ReactPlayer className="apod-player" url={apod.url}/> : <img src={apod.url} alt={apod.name} />}
-        </Paper>
-        <Paper elevation={3} className="explanation">
+        </div>
+        <div className="explanation" style={styles.explanation}>
             {apod.explanation}
-        </Paper>
-    </Box>)
+        </div>
+    </div>)
 }
+
 
 export default ApodImg;

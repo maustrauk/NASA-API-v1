@@ -1,14 +1,10 @@
 import {FETCHING_QUOTE_START, FETCHING_QUOTE_SUCCESS, FETCHING_QUOTE_FAIL, CHANGE_APOD_DATE} from './../actions/apodAction';
-import moment from 'moment';
 
-export const initState = {
-    apiObj: {},
-    isFetching: false,
-    err: "",
-    formDate: moment().format('YYYY-MM-DD')
-}
+import {APODinitState} from './../mic/initState';
 
-const apodReducer = (state = initState, action) => {
+
+
+const apodReducer = (state = APODinitState, action) => {
     switch (action.type) {
         case(FETCHING_QUOTE_START):
         return ({
