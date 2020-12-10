@@ -4,15 +4,15 @@ import {connect} from 'react-redux';
 import ApodImg from './ApodImg';
 import ApodForm from './../forms/ApodForm';
 
-import {getAPODobj} from './../actions/apodAction';
+import {getAPODobj, changeAPODdate} from './../actions/apodAction';
 
 const Apod = props => {
 
-    const {getAPODobj, apiObj, date} = props
+    const {getAPODobj, changeAPODdate, apiObj, date} = props
 
     return (<div className="apod-component">
         <ApodImg load={getAPODobj} apod={apiObj} date={date}/>
-        <ApodForm date={date}/>
+        <ApodForm changeAPODdate={changeAPODdate} date={date}/>
     </div>)
 }
 
@@ -25,4 +25,4 @@ const mapStateToProps = state => {
     };
   };
 
-export default connect(mapStateToProps,{getAPODobj})(Apod);
+export default connect(mapStateToProps,{getAPODobj, changeAPODdate})(Apod);

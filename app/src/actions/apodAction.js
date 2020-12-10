@@ -5,6 +5,7 @@ import {API_KEY, APOD_URL} from './../mic';
 export const FETCHING_QUOTE_START = 'FETCHING_QUOTE_START';
 export const FETCHING_QUOTE_SUCCESS = 'FETCHING_QUOTE_SUCCESS';
 export const FETCHING_QUOTE_FAIL = 'FETCHING_QUOTE_FAIL';
+export const CHANGE_APOD_DATE = 'CHANGE_APOD_DATE';
 
 export const getAPODobj = (date) => {
     return (dispatch => {
@@ -20,4 +21,12 @@ export const getAPODobj = (date) => {
                 dispatch({type:FETCHING_QUOTE_FAIL, payload: err});
             });
     });
+}
+
+
+export const changeAPODdate = (date) => {
+    return ({
+        type: CHANGE_APOD_DATE,
+        payload: date
+    })
 }

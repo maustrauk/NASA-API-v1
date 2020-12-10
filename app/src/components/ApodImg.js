@@ -7,7 +7,7 @@ const ApodImg = props => {
 
     useEffect(() => {
         load(date);
-    }, []);
+    }, [date]);
 
     return (<div className="apod-img">
         <h2>{apod.title}</h2>

@@ -1,4 +1,4 @@
-import {FETCHING_QUOTE_START, FETCHING_QUOTE_SUCCESS, FETCHING_QUOTE_FAIL} from './../actions/apodAction';
+import {FETCHING_QUOTE_START, FETCHING_QUOTE_SUCCESS, FETCHING_QUOTE_FAIL, CHANGE_APOD_DATE} from './../actions/apodAction';
 import moment from 'moment';
 
 export const initState = {
@@ -29,6 +29,13 @@ const apodReducer = (state = initState, action) => {
             isFetching: false,
             apiObj: action.payload
         });
+
+        case(CHANGE_APOD_DATE):
+        return ({
+            ...state,
+            formDate: action.payload
+        });
+        
         default:
             return state;
     }
