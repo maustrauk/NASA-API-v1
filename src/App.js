@@ -10,8 +10,8 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path='/' component={Landing} />
-          <Route path='/apod' component={Apod} />
+          <Route path='/landing' component={Landing} />
+          <Route exact path='/' component={Apod} />
           <Route path='/boxShooter' component={BoxShooter} />
         </Switch>
       </Router>
