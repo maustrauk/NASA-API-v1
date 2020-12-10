@@ -1,9 +1,11 @@
 import {FETCHING_QUOTE_START, FETCHING_QUOTE_SUCCESS, FETCHING_QUOTE_FAIL} from './../actions/apodAction';
+import moment from 'moment';
 
 export const initState = {
     apiObj: {},
     isFetching: false,
-    err: ""
+    err: "",
+    formDate: moment().format('YYYY-MM-DD')
 }
 
 const apodReducer = (state = initState, action) => {
