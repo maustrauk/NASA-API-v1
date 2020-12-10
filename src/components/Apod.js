@@ -11,6 +11,7 @@ const Apod = props => {
     const {getAPODobj, changeAPODdate, apiObj, date, styles} = props
 
     return (<div className="apod-component">
+        <h1> Astronomy Picture of the Day </h1>
         <ApodForm changeAPODdate={changeAPODdate} date={date} styles={styles.apodForm}/>
         <ApodImg load={getAPODobj} apod={apiObj} date={date} styles={styles.apodImg}/>
     </div>)

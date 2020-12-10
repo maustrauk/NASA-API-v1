@@ -10,6 +10,12 @@ body {
 }
 
 /*APOD*/
+.apod-component h1 {
+    text-align: center;
+    font-size: 3em;
+    color: tomato;
+    margin-top: 0.5em;
+}
 
 /*APOD Image */
 .apod-img {
