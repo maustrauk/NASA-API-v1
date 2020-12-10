@@ -7,7 +7,7 @@ const ApodImg = props => {
 
     useEffect(() => {
         load(date);
-    }, [date]);
+    }, [load, date]);
 
 
 
