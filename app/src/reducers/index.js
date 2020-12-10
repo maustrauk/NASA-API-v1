@@ -4,7 +4,7 @@ import apodReducer from './apodReducer';
 
 
 const rootReducer = combineReducers({
-    apod: apodReducer
+    APOD: apodReducer
 });
 
 export default rootReducer;
